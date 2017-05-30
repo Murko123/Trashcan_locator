@@ -1,5 +1,6 @@
 package com.example.jernej.trashcan_locator;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,6 +16,9 @@ import com.example.Trashcan;
 import java.util.ArrayList;
 
 public class ActivityVnos extends AppCompatActivity {
+    private GPSTracker gpsTracker;
+    private Location mLocation;
+    double latitude, longitude;
 ApplicationMy app;
     EditText imeK;
     EditText LokK;
@@ -29,6 +33,11 @@ ApplicationMy app;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vnos);
+        gpsTracker = new GPSTracker(getApplicationContext());
+        mLocation = gpsTracker.getLocation();
+
+        latitude = mLocation.getLatitude();
+        longitude = mLocation.getLongitude();
         app = (ApplicationMy)getApplication();
         imeK= (EditText)findViewById(R.id.vime);
         LokK= (EditText)findViewById(R.id.vlok);
@@ -59,7 +68,7 @@ ApplicationMy app;
             if(Neutralno.isChecked()) tag.add(new Tag(Neutralno.getText().toString()));
             if(Rec.isChecked()) tag.add(new Tag(Rec.getText().toString()));
             tagg.setList(tag);
-            Lokacija data = new Lokacija(LokK.getText().toString(),can,tagg);
+            Lokacija data = new Lokacija(LokK.getText().toString(),can,tagg, latitude, longitude);
             lok.add(data);
             app.setLokacijaList(lok);
             Log.d("Podatki", app.getLokacijaList().toString());

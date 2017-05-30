@@ -22,8 +22,8 @@ public class DataAll {
         lokacijaList = lo;
     }
 
-    public Lokacija addLocation(String name, Trashcan can, TagList tagg) {
-        Lokacija tmp = new Lokacija(name,can, tagg);
+    public Lokacija addLocation(String name, Trashcan can, TagList tagg, double x, double y) {
+        Lokacija tmp = new Lokacija(name,can, tagg,x,y);
         lokacijaList.add(tmp);
         return tmp;
     }
@@ -39,9 +39,11 @@ public class DataAll {
     public static DataAll scenarijA() {
         DataAll da = new DataAll();
         Lokacija tmp;
+        double a = 46.3778083;
+        double b = 15.8874182;
         Trashcan can = new Trashcan("Kanta","Levo ob drevesu");
         TagList tagg = new TagList();
-        tmp = da.addLocation("Pobrezje 113", can, tagg);
+        tmp = da.addLocation("Pobrezje 113", can, tagg,a,b);
 
         return da;
     }

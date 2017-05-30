@@ -9,17 +9,19 @@ import java.util.UUID;
 public class Lokacija {
     String id;
     String name;
-    long x, y; //GPS
+    double x, y; //GPS
     String fileName;
     long date;
     Trashcan kos;
     TagList tag;
 
-    public Lokacija(String name, Trashcan kos, TagList tag) {
+    public Lokacija(String name, Trashcan kos, TagList tag, double lat, double lon) {
         this.id = UUID.randomUUID().toString().replaceAll("-", "");
         this.name = name;
         this.kos = kos;
         this.tag = tag;
+        this.x = lat;
+        this.y= lon;
 
     }
 
@@ -56,6 +58,22 @@ public class Lokacija {
         this.tag = tag;
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public void setX(long x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(long y) {
+        this.y = y;
+    }
+
     @Override
     public String toString() {
         return "Lokacija{" +
@@ -63,6 +81,8 @@ public class Lokacija {
                 ", name='" + name + '\'' +
                 ", kos" + kos+
                 ", tag" + tag+
+                ", Latitude" + x+
+                ", Longitude" + y+
                 '}';
     }
 }

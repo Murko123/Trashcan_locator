@@ -15,6 +15,7 @@ public class Trashcan {
 
 
 
+
     public String getNaziv() {
         return naziv;
     }
@@ -31,12 +32,11 @@ public class Trashcan {
         this.opis = opis;
     }
 
-
-
-    public Trashcan( String naziv, String opis) {
+    public Trashcan(String naziv, String opis) {
         this.id =  UUID.randomUUID().toString().replaceAll("-", "");;
         this.naziv = naziv;
         this.opis = opis;
+
     }
 
     @Override
@@ -45,5 +45,7 @@ public class Trashcan {
                 "ID='" + id + '\''+
                 "Naziv='" + naziv + '\''+
                 "Opis='" + opis + '\'';
+
+
     }
 }

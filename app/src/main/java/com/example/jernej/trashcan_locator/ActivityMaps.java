@@ -6,6 +6,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.example.Lokacija;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
@@ -17,7 +18,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback {
+    ApplicationMy app;
     private GoogleMap mMap;
 
     private GPSTracker gpsTracker;
@@ -45,9 +49,16 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        app = (ApplicationMy)getApplication();
+        app.load();
+        ArrayList<Lokacija> lok = app.getLokacijaList();
+        int itemCount = lok.size();
         mMap = googleMap;
         // se morem dodelat
+       // mMap.addMarker(new MarkerOptions().position(new LatLng(46.3778083,15.8874182)));
+       // for(int i=0; i<itemCount;i++)
         mMap.addMarker(new MarkerOptions().position(new LatLng(46.3778083,15.8874182)));
+
         // Add a marker in Sydney and move the camera
         LatLng mojalok = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(mojalok).title("Tukaj ste vi!"));
