@@ -54,7 +54,7 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
         ArrayList<Lokacija> lok = app.getLokacijaList();
         int itemCount = lok.size();
         mMap = googleMap;
-        // se morem dodelat
+
        // mMap.addMarker(new MarkerOptions().position(new LatLng(46.3778083,15.8874182)));
        // for(int i=0; i<itemCount;i++)
         mMap.addMarker(new MarkerOptions().position(new LatLng(46.3778083,15.8874182)));
