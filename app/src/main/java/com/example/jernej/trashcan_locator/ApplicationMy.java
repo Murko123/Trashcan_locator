@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.example.DataAll;
 import com.example.Lokacija;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,12 +26,17 @@ import java.util.ArrayList;
         ArrayList<Lokacija> lokacijaList;
 
         public void onCreate() {
-            lokacijaList = new ArrayList<>();
+            super.onCreate();
             if(!load())
-                all = DataAll.scenarijA();
-             save();
+                all=DataAll.scenarijA();
+            save();
+
+
         }
 
+    public DataAll getDataAll() {
+        return all;
+    }
         public ArrayList<Lokacija> getLokacijaList() {
             return lokacijaList;
         }
@@ -39,6 +45,13 @@ import java.util.ArrayList;
             this.lokacijaList = lokacijaList;
             all=new DataAll(lokacijaList);
         }
+
+    public int velikost()
+    {
+        return lokacijaList.size();
+    }
+
+
 
     public boolean save() {
         File file = new File(this.getExternalFilesDir(DATA_MAP), ""

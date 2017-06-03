@@ -11,7 +11,7 @@ public class Lokacija {
     String name;
     double x, y; //GPS
     String fileName;
-    long date;
+
     Trashcan kos;
     TagList tag;
 
@@ -81,8 +81,8 @@ public class Lokacija {
                 ", name='" + name + '\'' +
                 ", kos" + kos+
                 ", tag" + tag+
-                ", Latitude" + x+
-                ", Longitude" + y+
+                ", Latitude='" + x+'\'' +
+                ", Longitude='" + y+'\'' +
                 '}';
     }
 }

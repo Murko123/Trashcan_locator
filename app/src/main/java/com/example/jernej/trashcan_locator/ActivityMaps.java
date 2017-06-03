@@ -5,6 +5,7 @@ import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.Lokacija;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -28,6 +29,8 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
     private Location mLocation;
     double latitude, longitude;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,23 +44,23 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
 
 
 
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         app = (ApplicationMy)getApplication();
         app.load();
-        ArrayList<Lokacija> lok = app.getLokacijaList();
-        int itemCount = lok.size();
+
         mMap = googleMap;
 
-       // mMap.addMarker(new MarkerOptions().position(new LatLng(46.3778083,15.8874182)));
-       // for(int i=0; i<itemCount;i++)
-        mMap.addMarker(new MarkerOptions().position(new LatLng(46.3778083,15.8874182)));
+
 
         // Add a marker in Sydney and move the camera
         LatLng mojalok = new LatLng(latitude, longitude);

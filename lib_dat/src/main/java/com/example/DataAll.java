@@ -8,7 +8,8 @@ import java.util.Date;
 
 public class DataAll {
 
-    private ArrayList<Lokacija> lokacijaList;
+    public static final String trashid= "kosid";
+     ArrayList<Lokacija> lokacijaList;
 
 
 
@@ -22,13 +23,19 @@ public class DataAll {
         lokacijaList = lo;
     }
 
-    public Lokacija addLocation(String name, Trashcan can, TagList tagg, double x, double y) {
+    public void addLocation(String name, Trashcan can, TagList tagg, double x, double y) {
         Lokacija tmp = new Lokacija(name,can, tagg,x,y);
         lokacijaList.add(tmp);
-        return tmp;
+
     }
 
+    public Lokacija getLok(int i){
+        return lokacijaList.get(i);
+    }
 
+    public int getSize(){
+        return lokacijaList.size();
+    }
     @Override
     public String toString() {
         return "DataAll{" +
@@ -38,13 +45,12 @@ public class DataAll {
 
     public static DataAll scenarijA() {
         DataAll da = new DataAll();
-        Lokacija tmp;
+
         double a = 46.3778083;
         double b = 15.8874182;
         Trashcan can = new Trashcan("Kanta","Levo ob drevesu");
         TagList tagg = new TagList();
-        tmp = da.addLocation("Pobrezje 113", can, tagg,a,b);
-
+        da.addLocation("Pobrezje",can,tagg,a,b);
         return da;
     }
 }
