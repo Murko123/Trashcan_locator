@@ -26,7 +26,12 @@ public class TagList {
                 "list=" + list +
                 '}';
     }
-
+    public Tag getPrvi() {
+        return list.get(0);
+    }
+    public ArrayList<Tag> getTags() {
+        return list;
+    }
 
 }
 

@@ -42,17 +42,6 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <Button
-        android:text="Vnos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonvnos"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:onClick="vnoselementov" />
-
-    <Button
         android:text="MAPA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -10,16 +10,20 @@ public class Lokacija {
     String id;
     String name;
     double x, y; //GPS
-    String fileName;
 
 
-    public Lokacija(String name, double x, double y, String fileName) {
+    Tag tags;
+
+
+
+    public Lokacija(String name, double x, double y, Tag tags) {
         this.id = UUID.randomUUID().toString().replaceAll("-", "");
         this.name = name;
         this.x = x;
         this.y = y;
+        this.tags = tags;
 
-        this.fileName = fileName;
+
 
     }
 
@@ -33,7 +37,7 @@ public class Lokacija {
                 ", name='" + name + '\'' +
                 ", x=" + x +
                 ", y=" + y +
-                ", fileName='" + fileName + '\'' +
+                ", tags=" + tags +
                 '}';
     }
 
@@ -69,13 +73,19 @@ public class Lokacija {
         this.y = y;
     }
 
-    public String getFileName() {
-        return fileName;
+    public Tag getTags() {
+        return tags;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public String getTagss() {
+        return tags.toString();
     }
+
+    public void setTags(Tag tags) {
+        this.tags = tags;
+    }
+
+
 
 
 }

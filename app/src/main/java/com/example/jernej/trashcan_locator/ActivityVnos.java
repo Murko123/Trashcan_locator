@@ -65,7 +65,7 @@ ApplicationMy app;
             if(Obleka.isChecked()) tag.add(new Tag(Obleka.getText().toString()));
             if(Neutralno.isChecked()) tag.add(new Tag(Neutralno.getText().toString()));
             if(Rec.isChecked()) tag.add(new Tag(Rec.getText().toString()));
-            Lokacija data = new Lokacija(LokK.getText().toString(), latitude, longitude,"");
+            Lokacija data = new Lokacija(LokK.getText().toString(), latitude, longitude, tagg.getPrvi());
             lok.add(data);
             Log.d("Podatki", app.getLokacijaList().toString());
             app.save();

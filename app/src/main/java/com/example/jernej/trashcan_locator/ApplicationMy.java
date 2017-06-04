@@ -63,6 +63,9 @@ import java.util.ArrayList;
         else return false;
         return true;
     }
+    public void removeLocationByPosition(int adapterPosition) {
+        all.getLokacijaAll().remove(adapterPosition);
+    }
     }
 
 
