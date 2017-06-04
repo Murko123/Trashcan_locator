@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 /**
@@ -10,13 +11,12 @@ public class Lokacija {
     String id;
     String name;
     double x, y; //GPS
+    ArrayList<Tag> tags;
 
 
-    Tag tags;
 
 
-
-    public Lokacija(String name, double x, double y, Tag tags) {
+    public Lokacija(String name, double x, double y, ArrayList<Tag> tags) {
         this.id = UUID.randomUUID().toString().replaceAll("-", "");
         this.name = name;
         this.x = x;
@@ -73,17 +73,22 @@ public class Lokacija {
         this.y = y;
     }
 
-    public Tag getTags() {
+    public ArrayList<Tag> getTags() {
         return tags;
     }
+
+    public void setTags(ArrayList<Tag> tags) {
+        this.tags = tags;
+    }
+
+
+
 
     public String getTagss() {
         return tags.toString();
     }
 
-    public void setTags(Tag tags) {
-        this.tags = tags;
-    }
+
 
 
 
