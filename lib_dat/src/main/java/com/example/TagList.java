@@ -5,7 +5,6 @@ package com.example;
  */
 
 import java.util.ArrayList;
-
 public class TagList {
     private ArrayList<Tag> list;
 
@@ -21,14 +20,6 @@ public class TagList {
 
     }
 
-    public ArrayList<Tag> getList() {
-        return list;
-    }
-
-    public void setList(ArrayList<Tag> list) {
-        this.list = list;
-    }
-
     @Override
     public String toString() {
         return "TagList{" +
@@ -38,3 +29,5 @@ public class TagList {
 
 
 }
+
+

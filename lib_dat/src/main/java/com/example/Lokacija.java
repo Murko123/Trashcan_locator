@@ -12,17 +12,29 @@ public class Lokacija {
     double x, y; //GPS
     String fileName;
 
-    Trashcan kos;
-    TagList tag;
 
-    public Lokacija(String name, Trashcan kos, TagList tag, double lat, double lon) {
+    public Lokacija(String name, double x, double y, String fileName) {
         this.id = UUID.randomUUID().toString().replaceAll("-", "");
         this.name = name;
-        this.kos = kos;
-        this.tag = tag;
-        this.x = lat;
-        this.y= lon;
+        this.x = x;
+        this.y = y;
 
+        this.fileName = fileName;
+
+    }
+
+    @Override
+    public String toString() {
+        return name + " " +id;
+    }
+    public String toStringFull() {
+        return "Lokacija{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                ", fileName='" + fileName + '\'' +
+                '}';
     }
 
     public String getId() {
@@ -41,28 +53,11 @@ public class Lokacija {
         this.name = name;
     }
 
-
-    public Trashcan getKos() {
-        return kos;
-    }
-
-    public void setKos(Trashcan kos) {
-        this.kos = kos;
-    }
-
-    public TagList getTag() {
-        return tag;
-    }
-
-    public void setTag(TagList tag) {
-        this.tag = tag;
-    }
-
     public double getX() {
         return x;
     }
 
-    public void setX(long x) {
+    public void setX(double x) {
         this.x = x;
     }
 
@@ -70,19 +65,17 @@ public class Lokacija {
         return y;
     }
 
-    public void setY(long y) {
+    public void setY(double y) {
         this.y = y;
     }
 
-    @Override
-    public String toString() {
-        return "Lokacija{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", kos" + kos+
-                ", tag" + tag+
-                ", Latitude='" + x+'\'' +
-                ", Longitude='" + y+'\'' +
-                '}';
+    public String getFileName() {
+        return fileName;
     }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+
 }

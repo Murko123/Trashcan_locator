@@ -11,7 +11,6 @@ import android.widget.EditText;
 import com.example.Lokacija;
 import com.example.Tag;
 import com.example.TagList;
-import com.example.Trashcan;
 
 import java.util.ArrayList;
 
@@ -58,7 +57,6 @@ ApplicationMy app;
     public void shrani(View vnos){
         if(imeK.getText().toString().length()!=0 && LokK.getText().toString().length()!=0 && OpisK.getText().toString().length()!=0){
             ArrayList<Lokacija> lok = app.getLokacijaList();
-            Trashcan can = new Trashcan(imeK.getText().toString(), OpisK.getText().toString());
             TagList tagg = new TagList();
             ArrayList<Tag> tag = new ArrayList<>();
             if(Plastika.isChecked()) tag.add(new Tag(Plastika.getText().toString()));
@@ -67,10 +65,8 @@ ApplicationMy app;
             if(Obleka.isChecked()) tag.add(new Tag(Obleka.getText().toString()));
             if(Neutralno.isChecked()) tag.add(new Tag(Neutralno.getText().toString()));
             if(Rec.isChecked()) tag.add(new Tag(Rec.getText().toString()));
-            tagg.setList(tag);
-            Lokacija data = new Lokacija(LokK.getText().toString(),can,tagg, latitude, longitude);
+            Lokacija data = new Lokacija(LokK.getText().toString(), latitude, longitude,"");
             lok.add(data);
-            app.setLokacijaList(lok);
             Log.d("Podatki", app.getLokacijaList().toString());
             app.save();
             finish();

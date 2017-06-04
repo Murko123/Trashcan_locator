@@ -41,10 +41,6 @@ import java.util.ArrayList;
             return lokacijaList;
         }
 
-        public void setLokacijaList(ArrayList<Lokacija> lokacijaList) {
-            this.lokacijaList = lokacijaList;
-            all=new DataAll(lokacijaList);
-        }
 
     public int velikost()
     {
