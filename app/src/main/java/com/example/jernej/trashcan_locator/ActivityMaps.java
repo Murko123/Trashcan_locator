@@ -57,6 +57,7 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    //markerji
     @Override
     public void onMapReady(GoogleMap googleMap) {
         app = (ApplicationMy)getApplication();
